@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200&family=Nerko+One&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color:white;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.header{
+    height: 60px;
+    background-color:whitesmoke;
+    text-align: center;
+    padding-top: 10px;
+    border-bottom: 1px solid black;
+    margin-bottom: 50px;
+}
+
+.title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+p{
+    padding-bottom: 10px;
+}
+
+.form{
+    margin-top: 50px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    align-content: center; 
+    text-align: center;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}
+label{
+    float: left;
+    padding-bottom: 20px;
+}
+ input{
+     width: 150px;
+     height: 30px;
+     float: right;
+     padding-bottom: 15px;
+     outline: none;
+     color: black;
+ }
+ button{
+     width: 100px;
+     outline: 0;
+     background-color: whitesmoke;
+     border: 1px solid black;
+     height: 30px;
+     margin-top: 20px;
+ }
+ li{
+     text-align: left;
+     padding: 0;
+     margin: 0;
+ }
+ p .list_item{
+     padding: 0;
+     margin: 0;
+ }
+.menu{
+    display: flex; 
+    align-items: center; 
+    align-content: center; 
+    justify-content: center;
+}
+ #visible{
+     text-align: center;
+ }
+
+ .link{
+    min-height: 30px;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-top: 10px;
+    left: 0;
+    bottom: 0;
+ }
+ a{
+     text-decoration: underline;
+     color: black;
+ }

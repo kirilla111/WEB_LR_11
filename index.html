@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Афанасьев Кирилл 11 ЛР</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <div class="header">
+        <span class="title">Форма для учета посещаемости студентов</span><br>
+        <span class="title link"><a href="https://github.com/Svetlana-sv/vue-basics">Сслыка на GitHub</a></span>
+    </div>
+
+    <div id="AddInfo" style="margin-top: 50px; font-size: 16px; font-style: italic;">
+        <center><span v-bind:title="info">Наведите курсор на этот текст для получения дополнительной информации</span></center>
+    </div>
+
+    <div id="visible">
+        <div v-show="visible" style="font-size: 14px;">
+            <h1>Шрифт этого заголовка был импортирован с сайта Google Fonts</h1>
+            <p>Заполните поля ниже фамилией и именем студента для учета посещаемости</p>
+        </div>
+        <button v-on:click="visible=!visible">{{visible?'Скрыть текст':'Отобразить текст'}}</button>
+    </div>
+
+    <script>
+        var visible = new Vue({
+            el: '#visible',
+            data: {
+                visible: true
+            }
+        });
+
+    </script>
+
+
+    <div class="menu">
+        <div id="menu">
+            <form class="form">
+                <h1>Форма для учета посещаемости</h1>
+                <div><label>Фамилия</label>
+                    <input v-model="surname" required type="text" placeholder="Фамилия" />
+                </div>
+                <div><label>Имя</label>
+                    <input required v-model="name" type="text" placeholder="Имя" />
+                </div>
+
+                <center><button v-on:click="if(surname !== '' && name !== ''){list1.push(surname+
+                    ' '+name),setEmpty()}" type="submit">Добавить</button></center>
+
+            </form>
+            <p v-if="list1.length == 0">На данный момент список пуст</p>
+            <ol>
+                <li v-for="i in list1">
+                    <p class="list_item">{{i}}</p>
+                </li>
+            </ol>
+
+        </div>
+        <script>
+            var menu = new Vue({
+                el: '#menu',
+                data: {
+                    surname: '',
+                    list1: [],
+                    name: '',
+                },
+                methods: {
+                    setEmpty: function() {
+                        this.surname = "";
+                        this.name = "";
+                    }
+                }
+            })
+
+        </script>
+
+        <script>
+            var AddInfo = new Vue({
+                el: '#AddInfo',
+                data: {
+                    info: 'Этот обьект был создан, чтобы продемонстрировать работу фреймворка Vue.js'
+                }
+            })
+
+        </script>
+    </div>
+</body>
+</html>
